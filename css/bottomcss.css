@@ -1,0 +1,202 @@
+:root{
+    --hover-color: #0373fc;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bottom-section{
+    width: 80%;
+    height: 100vh;
+    font-family: sans-serif;
+
+    padding-top: 50px;
+
+    position: relative;
+}
+
+#bottom-section ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#bottom-section > ul{
+    width: 100%;
+    display: flex;
+}
+
+#bottom-section > ul > li{
+    width: 25%;
+    position: relative;
+}
+
+#bottom-section > ul > li > .label{
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+#bottom-section > ul > li > .label > .fas{
+    font-size: 16px;
+    margin-left: 5px;
+    display: none;
+
+    position: absolute;
+    right: 3px;
+}
+
+#bottom-section > ul > li > ul > li{
+    width: 100%;
+    height: 25px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    letter-spacing: 0.3px;
+}
+
+#bottom-section > ul > li > ul > li > span{
+    cursor: pointer;
+    position: relative;
+    opacity: 0.75;
+    transition: all 0.2s;
+}
+
+#bottom-section > ul > li > ul > li > span::before{
+    content: "";
+
+    width: 100%;
+    height: 100%;
+    border-bottom: 1.5px solid #777;
+    
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: all 0.2s;
+}
+
+#bottom-section > ul > li > ul > li > span:hover{
+    opacity: 1;
+}
+
+#bottom-section > ul > li > ul > li > span:hover::before{
+    transform: scaleX(1);
+}
+
+#bottom-section > div{
+    width: 20%;
+    height: 200px;
+
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+}
+
+#bottom-section > div > img{
+    width: 75%;
+    object-fit: cover;
+}
+
+#bottom-section > div > p{
+    font-size: 12px;
+    line-height: 20px;
+    opacity: 0.75;
+    margin-top: 20px;
+}
+
+#bottom-section > div > div{
+    width: 100%;
+    margin-top: 20px;
+}
+
+#bottom-section > div > div > .fab, #bottom-section > div > div > .fas{
+    font-size: 20px;
+    opacity: 0.6;
+    margin-right: 10px;
+    cursor: pointer;
+
+    transition: all 0.4s;
+}
+
+#bottom-section > div > div > .fab:hover, #bottom-section > div > div > .fas:hover{
+    opacity: 1;
+}
+
+#bottom-section > div > div > .fab:hover:nth-of-type(1){
+    color: #3b5998;
+}
+
+#bottom-section > div > div > .fab:hover:nth-of-type(2){
+    color: #00acee;
+}
+
+#bottom-section > div > div > .fab:hover:nth-of-type(3){
+    color: 	#FF0000;
+}
+
+#bottom-section > div > div > .fas:hover{
+    color: orangered;
+}
+
+@media (max-width:750px) {
+    #bottom-section{
+        width: 80%;
+        height: auto;
+    }
+
+    #bottom-section > ul{
+        display: block;
+    }
+
+    #bottom-section > ul > li{
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.3);
+        margin-bottom: 10px;
+    }
+
+    #bottom-section > ul > li > .label{
+        font-size: 17px;
+        line-height: 25px;
+        cursor: pointer;
+    }
+
+    #bottom-section > ul > li > .label:hover,#bottom-section > ul > li > .label.mobile-view{
+        color: var(--hover-color);
+    }
+
+    #bottom-section > ul > li > .label > .fas:nth-of-type(1){
+        display: inline-block;
+    }
+
+    #bottom-section > ul > li > .label.mobile-view > .fas:nth-of-type(1){
+        display: none;
+    }
+
+    #bottom-section > ul > li > .label.mobile-view > .fas:nth-of-type(2){
+        display: inline-block;
+    }
+    
+    #bottom-section > ul > li > ul{
+        display: none;
+    }
+
+    #bottom-section > ul > li > .label.mobile-view + ul{
+        display: block;
+    }
+
+    #bottom-section > div{
+        width: 100%;
+        position: inherit;
+        bottom: 0;
+    }
+
+    #bottom-section > div > img{
+        width: 200px;
+    }
+}
